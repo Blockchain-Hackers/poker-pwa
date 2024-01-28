@@ -8,6 +8,7 @@ type Input = {
   type: string
   placeholder: string
   disabled?: boolean
+  required?: boolean
 }
 type Login = {
   email: Input
@@ -29,6 +30,7 @@ const resetLogin:Login = {
     label: 'Email',
     type: 'email',
     placeholder: 'Enter your email',
+    required: true,
   },
   password: {
     name: 'password',
@@ -36,6 +38,7 @@ const resetLogin:Login = {
     label: 'Password',
     type: 'password',
     placeholder: 'Enter your password',
+    required: true,
   }
 }
 const resetSignup:Signup = {
@@ -45,6 +48,7 @@ const resetSignup:Signup = {
     label: 'Email',
     type: 'email',
     placeholder: 'Enter your email',
+    required: true,
   },
   password: {
     name: 'password',
@@ -52,6 +56,7 @@ const resetSignup:Signup = {
     label: 'Password',
     type: 'password',
     placeholder: 'Enter your password',
+    required: true,
   },
   confirmPassword: {
     name: 'confirmPassword',
@@ -59,6 +64,7 @@ const resetSignup:Signup = {
     label: 'Confirm Password',
     type: 'password',
     placeholder: 'Confirm your password',
+    required: true,
   },
   username: {
     name: 'username',
@@ -66,6 +72,7 @@ const resetSignup:Signup = {
     label: 'Username',
     type: 'text',
     placeholder: 'Choose username',
+    required: true,
   }
 }
 
@@ -112,10 +119,12 @@ const submitForm = () => {
             <label class="">
               <span class="block text-white px-1">{{ input.label }}</span>
               <input
+                v-model="input.modelValue"
                 :name="input.name"
                 :type="input.type"
                 :placeholder="input.placeholder"
-                v-model="input.modelValue"
+                :disabled="input.disabled"
+                :required="input.required"
                 class="w-full border-4 border-solid border-black/30 bg-amber-700/90
                 rounded-xl p-2 outline-none text-white placeholder:text-amber-800"
               />
