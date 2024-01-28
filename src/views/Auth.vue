@@ -97,10 +97,10 @@ const submitForm = () => {
 
 <template>
   <div
-    class="min-h-[100svh] flex flex-col justify-center items-center px-6
+    class="min-h-[100svh] flex flex-col justify-center items-center p-6
     [background-image:_linear-gradient(to_bottom_right,_rgba(0,0,0,.6),_rgba(0,0,0,.2)),url('@/assets/images/Site-background-dark.webp')] [background-size:cover]">
     <div class="grid gap-6 w-[500px] max-w-full">
-      <ul class="w-full flex gap-6 justify-center mt-6 font-black text-amber-900">
+      <ul class="w-full flex gap-6 justify-center font-black text-amber-900">
         <li
           v-for="tab in ['login', 'signup']"
           @click="switchTab(tab as 'login' | 'signup')"
