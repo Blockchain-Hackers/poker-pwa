@@ -97,9 +97,9 @@ const submitForm = () => {
 
 <template>
   <div
-    class="min-h-[100svh] flex flex-col justify-center items-center p-6
+    class="font-jmadh min-h-[100svh] flex flex-col justify-center items-center p-6
     [background-image:_linear-gradient(to_bottom_right,_rgba(0,0,0,.6),_rgba(0,0,0,.2)),url('@/assets/images/Site-background-dark.webp')] [background-size:cover]">
-    <div class="grid gap-6 w-[500px] max-w-full">
+    <div class="grid gap-6 w-[500px] max-w-full grayscale-[30%] text-3xl">
       <ul class="w-full flex gap-6 justify-center font-black text-amber-900">
         <li
           v-for="tab in ['login', 'signup']"
@@ -112,7 +112,7 @@ const submitForm = () => {
       </ul>
       
       <div
-        class="bg-white rounded-xl ring-4 ring-amber-800 text-xl shadow-2xl shadow-black
+        class="bg-white rounded-xl ring-4 ring-amber-800 shadow-2xl shadow-black
         [background-image:url('@/assets/images/bg-texture.jpg')] [background-size:100px]">
         <form id="form" @submit.prevent="submitForm" class="flex flex-col p-4 md:p-6 gap-y-6 font-black">
           <template v-for="input in form.form" :key="input.name">
